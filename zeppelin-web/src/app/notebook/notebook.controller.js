@@ -22,7 +22,7 @@ angular.module('zeppelinWebApp').controller('NotebookCtrl', function($scope, $ro
   $scope.tableToggled = false;
   $scope.viewOnly = false;
   $scope.showSetting = false;
-  $scope.looknfeelOption = [ 'default', 'simple', 'report'];
+  $scope.looknfeelOption = [ 'report'];
   $scope.cronOption = [
     {name: 'None', value : undefined},
     {name: '1m', value: '0 0/1 * * * ?'},
@@ -215,10 +215,12 @@ angular.module('zeppelinWebApp').controller('NotebookCtrl', function($scope, $ro
 
   var initializeLookAndFeel = function() {
     if (!$scope.note.config.looknfeel) {
-      $scope.note.config.looknfeel = 'default';
+      $scope.note.config.looknfeel = 'report';
     } else {
       $scope.viewOnly = $scope.note.config.looknfeel === 'report' ? true : false;
     }
+    $scope.note.config.looknfeel = 'report';
+    $scope.viewOnly = true;
     $rootScope.$broadcast('setLookAndFeel', $scope.note.config.looknfeel);
   };
 
