@@ -289,6 +289,12 @@ public class Notebook {
 
   public List<Note> getAllNotes() {
     synchronized (notes) {
+      try {
+        notes.clear();
+        loadAllNotes();
+      } catch (IOException e){
+        logger.warn("loadAllNotes failed");
+      }
       List<Note> noteList = new ArrayList<Note>(notes.values());
       Collections.sort(noteList, new Comparator() {
         @Override
