@@ -489,7 +489,7 @@
         <hadoop.version>1.0.4</hadoop.version>
         <avro.mapred.classifier>hadoop1</avro.mapred.classifier>
         <codehaus.jackson.version>1.8.8</codehaus.jackson.version>
-        <akka.group>org.spark-project.akka</akka.group>
+        <akka.group>com.typesafe.akka</akka.group>
       </properties>
     </profile>
 
